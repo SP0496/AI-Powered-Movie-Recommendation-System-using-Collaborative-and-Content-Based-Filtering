@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Movie Recommender</h1>
+      <p>Type a movie title and get top recommendations based on content & collaborative features.</p>
+
+      <div class="form-row">
+        <input id="titleInput" list="titlesList" placeholder="Start typing a movie title...">
+        <datalist id="titlesList"></datalist>
+        <button id="searchBtn">Recommend</button>
+      </div>
+
+      <div id="results">
+        <h2>Recommendations</h2>
+        <ul id="recList"></ul>
+      </div>
+
+      <footer>
+        <small>Simple demo frontend — powered by server-side recommendations.</small>
+      </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
