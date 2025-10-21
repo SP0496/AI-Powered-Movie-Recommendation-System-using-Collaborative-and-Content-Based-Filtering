@@ -4,8 +4,14 @@ import pickle
 import difflib
 import pandas as pd
 import numpy as np
-from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS
+try:
+    from flask import Flask, request, jsonify, render_template
+    from flask_cors import CORS
+except Exception as e:  # Provide a clearer message when dependencies are missing
+    raise RuntimeError(
+        "Missing required web dependencies: ensure 'flask' and 'flask-cors' are installed. "
+        "Run: pip install -r requirements.txt"
+    ) from e
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
